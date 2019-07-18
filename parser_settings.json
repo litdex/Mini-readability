@@ -1,0 +1,4 @@
+{"default": {"title_tags": ["h1"], "title_atr": {}, "content_tag": "p", "content_atr": {}},
+ "habr.com": {"content_tag": "div", "content_atr": {"class": "post__text post__text-html js-mediator-article"},"title_tags": ["span"],"title_atr": {"class":"post__title-text"}},
+ "ria.ru": {"content_tag": "div", "content_atr": {"class":"article__text"}}
+}
