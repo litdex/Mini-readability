@@ -2,6 +2,7 @@ from settings_manager import FormatSettingsManager, ParserSettingsManager #Ис�
 from html_downloader import HTMLDownloader #Используется для загрузки URL страниц
 from html_parser import HTMLParser #Используется для получения полезной информации из HTML страницы
 from content_manager import save_content #Используется для сохранения контента в файле .txt
+from time import time
 
 def create_filename(text):
     """Используется для получения названия файла, который нужно сохранить"""
@@ -17,6 +18,7 @@ if __name__ == "__main__":
     format_settings_manager = FormatSettingsManager()
     format_settings = format_settings_manager.get_settings()
     content_place = 'content/{title}.txt'
+    parser_settings_manager = ParserSettingsManager()
 
 
     input_str = ''
@@ -29,7 +31,6 @@ if __name__ == "__main__":
         except:
             print('Вы ввели неверную ссылку')
             continue
-        parser_settings_manager = ParserSettingsManager()
         parser_settings = parser_settings_manager.get_settings(html_downloader.get_domain())
         html_parser = HTMLParser(html, parser_settings, format_settings)
         content = html_parser.get_text()

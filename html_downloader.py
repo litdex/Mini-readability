@@ -7,19 +7,16 @@ class HTMLDownloader():
     """Класс, предназначеный для загрузки html страницы по URL"""
 
     def __init__(self, url):
-        """ При указании url, конструктор сам получает html страницу и извлекает доменное имя"""
         self._url = url
-        self._domain = urlparse(url).hostname
-        self._html = requests.get(url).text
 
     def get_domain(self):
-        return self._domain
+        return urlparse(self._url).hostname
 
     def get_url(self):
         return self._url
 
     def get_html(self):
-        return self._html
+        return requests.get(self._url).text
 
 
 
